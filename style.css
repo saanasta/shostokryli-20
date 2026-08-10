@@ -255,30 +255,31 @@ h1 span {
 .letter {
   position: absolute;
   z-index: 10;
-  left: 6%;
-  width: 88%;
-  height: 100%;
-  bottom: 0;
+  left: 4%;
+  width: 92%;
+  height: 94%;
+  bottom: 3%;
   background: var(--paper);
   border-radius: 8px;
   box-shadow: 0 12px 30px rgba(0, 40, 65, .18);
   overflow: auto;
-  transform: translateY(100%);
+
+  /* Спочатку лист повністю схований */
+  transform: translateY(110%);
   opacity: 0;
-  transition: transform 1s cubic-bezier(.18,.78,.2,1), opacity .45s ease;
+
+  transition:
+    transform 1s cubic-bezier(.18,.78,.2,1),
+    opacity .45s ease;
 }
 
+/* Після відкриття лист повністю виїжджає */
 .envelope.reveal-letter .letter {
-  transform: translateY(0);
+  transform: translateY(-10%);
   opacity: 1;
 }
 
-.envelope.reveal-letter .letter {
-  z-index: 10;
-  transform: translateY(-57%);
-  opacity: 1;
-}
-
+/* Після появи листа сам конверт зникає */
 .envelope.reveal-letter .back,
 .envelope.reveal-letter .front,
 .envelope.reveal-letter .flap {
@@ -286,13 +287,14 @@ h1 span {
   pointer-events: none;
 }
 
+/* Печатка теж зникає */
 .envelope.reveal-letter .seal {
   opacity: 0;
   pointer-events: none;
 }
 
 
-
+/* ЛИСТ */
 .letter-paper {
   min-height: 100%;
   margin: 10px;
@@ -359,7 +361,11 @@ h1 span {
   padding: 18px 12px;
   border-right: 1px solid rgba(0,74,135,.12);
 }
-.fact:last-child { border-right: 0; }
+
+.fact:last-child {
+  border-right: 0;
+}
+
 .fact span {
   display: block;
   color: var(--orange-dark);
@@ -368,6 +374,7 @@ h1 span {
   letter-spacing: .16em;
   margin-bottom: 7px;
 }
+
 .fact b {
   font-size: 12px;
   line-height: 1.45;
@@ -420,8 +427,13 @@ h1 span {
   text-transform: uppercase;
   transition: .2s ease;
 }
-.map-button:hover { background: var(--orange-dark); }
 
+.map-button:hover {
+  background: var(--orange-dark);
+}
+
+
+/* ПЕЧАТКА */
 .seal {
   position: absolute;
   z-index: 9;
@@ -436,7 +448,9 @@ h1 span {
   background:
     radial-gradient(circle, #ffd47e 0 57%, transparent 58%),
     var(--orange);
-  box-shadow: 0 6px 13px rgba(80,45,10,.28), inset 0 0 0 4px rgba(255,255,255,.25);
+  box-shadow:
+    0 6px 13px rgba(80,45,10,.28),
+    inset 0 0 0 4px rgba(255,255,255,.25);
   transition: opacity .35s ease, transform .45s ease;
   display: grid;
   place-items: center;
@@ -468,8 +482,13 @@ h1 span {
   text-transform: uppercase;
   transition: opacity .3s;
 }
-.envelope.open + .open-hint { opacity: 0; }
 
+.envelope.open + .open-hint {
+  opacity: 0;
+}
+
+
+/* ДЕКОР */
 .bird-line {
   position: absolute;
   color: var(--orange);
@@ -478,9 +497,21 @@ h1 span {
   font-family: serif;
   pointer-events: none;
 }
-.bird-one { left: 4%; top: 8%; transform: rotate(-25deg); }
-.bird-two { right: 4%; bottom: 7%; transform: rotate(155deg); }
 
+.bird-one {
+  left: 4%;
+  top: 8%;
+  transform: rotate(-25deg);
+}
+
+.bird-two {
+  right: 4%;
+  bottom: 7%;
+  transform: rotate(155deg);
+}
+
+
+/* FOOTER */
 footer {
   padding: 30px;
   display: flex;
@@ -492,25 +523,73 @@ footer {
   font-weight: 800;
   letter-spacing: .18em;
 }
+
 footer img {
   width: 25px;
   height: 30px;
   object-fit: contain;
 }
 
+
+/* МОБІЛЬНА ВЕРСІЯ */
 @media (max-width: 680px) {
-  .topbar { padding: 18px 0; }
-  .hero { padding-top: 48px; }
-  .date-line { gap: 10px; }
-  .date-line span { font-size: 20px; }
-  .countdown { gap: 6px; }
-  .countdown div { min-width: 58px; }
-  .countdown i { font-size: 20px; }
-  .facts { grid-template-columns: 1fr; }
-  .fact { border-right: 0; border-bottom: 1px solid rgba(0,74,135,.12); }
-  .fact:last-child { border-bottom: 0; }
-  .two-days { grid-template-columns: 1fr; }
-  .letter { height: 88%; }
-  .envelope.reveal-letter .letter { transform: translateY(-53%); }
-  .wing { display: none; }
+  .topbar {
+    padding: 18px 0;
+  }
+
+  .hero {
+    padding-top: 48px;
+  }
+
+  .date-line {
+    gap: 10px;
+  }
+
+  .date-line span {
+    font-size: 20px;
+  }
+
+  .countdown {
+    gap: 6px;
+  }
+
+  .countdown div {
+    min-width: 58px;
+  }
+
+  .countdown i {
+    font-size: 20px;
+  }
+
+  .facts {
+    grid-template-columns: 1fr;
+  }
+
+  .fact {
+    border-right: 0;
+    border-bottom: 1px solid rgba(0,74,135,.12);
+  }
+
+  .fact:last-child {
+    border-bottom: 0;
+  }
+
+  .two-days {
+    grid-template-columns: 1fr;
+  }
+
+  .letter {
+    left: 2%;
+    width: 96%;
+    height: 94%;
+    bottom: 3%;
+  }
+
+  .envelope.reveal-letter .letter {
+    transform: translateY(-5%);
+  }
+
+  .wing {
+    display: none;
+  }
 }
