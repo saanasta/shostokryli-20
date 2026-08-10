@@ -292,8 +292,8 @@ h1 span {
 .letter {
   position: absolute;
   z-index: 10;
-  left: 4%;
-  width: 92%;
+  left: 8%;
+  width: 84%;
   top: 0;
   bottom: auto;
 
@@ -311,7 +311,6 @@ h1 span {
     opacity .45s ease;
 }
 
-/* Після відкриття лист стає повноцінним блоком */
 .envelope.reveal-letter {
   aspect-ratio: auto;
   filter: none;
@@ -326,7 +325,8 @@ h1 span {
   opacity: 1;
 }
 
-/* Конверт повністю зникає */
+/* КОНВЕРТ ЗНИКАЄ */
+
 .envelope.reveal-letter .back,
 .envelope.reveal-letter .front,
 .envelope.reveal-letter .flap,
@@ -335,15 +335,24 @@ h1 span {
   pointer-events: none;
 }
 
+/* ВНУТРІШНІЙ ЛИСТ */
+
 .letter-paper {
   min-height: 0;
-  margin: 10px;
-  padding: clamp(28px, 5vw, 58px);
+  margin: 8px;
+  padding: 34px 42px;
+
   border: 1px solid rgba(252,177,72,.55);
   border-radius: 5px;
+
   text-align: center;
+
   background:
-    radial-gradient(circle at 90% 10%, rgba(252,177,72,.10), transparent 24%),
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(252,177,72,.10),
+      transparent 24%
+    ),
     var(--paper);
 }
 
@@ -356,7 +365,7 @@ h1 span {
   font-size: 10px;
   font-weight: 800;
   letter-spacing: .2em;
-  margin-bottom: 25px;
+  margin-bottom: 18px;
 }
 
 .letter-brand img {
@@ -383,10 +392,10 @@ h1 span {
 
 .letter-text {
   max-width: 610px;
-  margin: 22px auto;
-  line-height: 1.75;
+  margin: 16px auto;
+  line-height: 1.55;
   color: #486678;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .facts {
@@ -394,11 +403,11 @@ h1 span {
   grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid rgba(0,74,135,.16);
   border-bottom: 1px solid rgba(0,74,135,.16);
-  margin: 28px 0;
+  margin: 20px 0;
 }
 
 .fact {
-  padding: 18px 12px;
+  padding: 15px 10px;
   border-right: 1px solid rgba(0,74,135,.12);
 }
 
@@ -417,18 +426,18 @@ h1 span {
 
 .fact b {
   font-size: 12px;
-  line-height: 1.45;
+  line-height: 1.4;
 }
 
 .two-days {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: 12px;
   text-align: left;
 }
 
 .day-card {
-  padding: 18px;
+  padding: 15px;
   background: rgba(0,74,135,.055);
   border-left: 3px solid var(--orange);
 }
@@ -441,23 +450,23 @@ h1 span {
 }
 
 .day-card h3 {
-  margin: 7px 0 7px;
+  margin: 6px 0;
   font-family: 'Playfair Display', serif;
-  font-size: 22px;
+  font-size: 20px;
   color: var(--navy);
 }
 
 .day-card p {
   margin: 0;
   font-size: 11px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: #567080;
 }
 
 .map-button {
   display: inline-block;
-  margin-top: 18px;
-  padding: 11px 18px;
+  margin-top: 15px;
+  padding: 10px 17px;
   background: var(--navy);
   color: white;
   text-decoration: none;
@@ -570,9 +579,10 @@ footer img {
   object-fit: contain;
 }
 
-/* МОБІЛЬНА ВЕРСІЯ */
+/* MOBILE */
 
 @media (max-width: 680px) {
+
   .topbar {
     padding: 18px 0;
   }
@@ -618,9 +628,53 @@ footer img {
     grid-template-columns: 1fr;
   }
 
+  /* Компактний лист на телефоні */
   .letter {
-    left: 2%;
-    width: 96%;
+    left: 3%;
+    width: 94%;
+  }
+
+  .letter-paper {
+    margin: 6px;
+    padding: 26px 20px;
+  }
+
+  .letter-brand {
+    margin-bottom: 16px;
+  }
+
+  .letter h2 {
+    font-size: clamp(34px, 10vw, 48px);
+  }
+
+  .letter-text {
+    margin: 14px auto;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .facts {
+    margin: 16px 0;
+  }
+
+  .fact {
+    padding: 13px 10px;
+  }
+
+  .two-days {
+    gap: 10px;
+  }
+
+  .day-card {
+    padding: 14px;
+  }
+
+  .day-card h3 {
+    font-size: 19px;
+  }
+
+  .day-card p {
+    font-size: 10px;
   }
 
   .envelope.reveal-letter .letter {
