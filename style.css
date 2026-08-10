@@ -124,7 +124,7 @@ h1 span {
 }
 
 .countdown {
-  margin: 20px auto 8px;
+  margin: 38px auto 8px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -161,7 +161,7 @@ h1 span {
 }
 
 .countdown-label {
-  margin: 35px 0 0;
+  margin: 0;
   color: var(--muted);
   font-size: 10px;
   letter-spacing: .1em;
@@ -257,29 +257,26 @@ h1 span {
   z-index: 10;
   left: 4%;
   width: 92%;
-  height: 94%;
-  bottom: 3%;
+  top: 0;
+  height: auto;
+  min-height: 0;
+  bottom: auto;
   background: var(--paper);
   border-radius: 8px;
   box-shadow: 0 12px 30px rgba(0, 40, 65, .18);
-  overflow: auto;
-
-  /* Спочатку лист повністю схований */
+  overflow: visible;
   transform: translateY(110%);
   opacity: 0;
-
   transition:
     transform 1s cubic-bezier(.18,.78,.2,1),
     opacity .45s ease;
 }
 
-/* Після відкриття лист повністю виїжджає */
 .envelope.reveal-letter .letter {
-  transform: translateY(-10%);
+  transform: translateY(35px);
   opacity: 1;
 }
 
-/* Після появи листа сам конверт зникає */
 .envelope.reveal-letter .back,
 .envelope.reveal-letter .front,
 .envelope.reveal-letter .flap {
@@ -287,16 +284,13 @@ h1 span {
   pointer-events: none;
 }
 
-/* Печатка теж зникає */
 .envelope.reveal-letter .seal {
   opacity: 0;
   pointer-events: none;
 }
 
-
-/* ЛИСТ */
 .letter-paper {
-  min-height: 100%;
+  min-height: 0;
   margin: 10px;
   padding: clamp(28px, 5vw, 58px);
   border: 1px solid rgba(252,177,72,.55);
@@ -432,8 +426,6 @@ h1 span {
   background: var(--orange-dark);
 }
 
-
-/* ПЕЧАТКА */
 .seal {
   position: absolute;
   z-index: 9;
@@ -482,13 +474,8 @@ h1 span {
   text-transform: uppercase;
   transition: opacity .3s;
 }
+.envelope.open + .open-hint { opacity: 0; }
 
-.envelope.open + .open-hint {
-  opacity: 0;
-}
-
-
-/* ДЕКОР */
 .bird-line {
   position: absolute;
   color: var(--orange);
@@ -497,21 +484,9 @@ h1 span {
   font-family: serif;
   pointer-events: none;
 }
+.bird-one { left: 4%; top: 8%; transform: rotate(-25deg); }
+.bird-two { right: 4%; bottom: 7%; transform: rotate(155deg); }
 
-.bird-one {
-  left: 4%;
-  top: 8%;
-  transform: rotate(-25deg);
-}
-
-.bird-two {
-  right: 4%;
-  bottom: 7%;
-  transform: rotate(155deg);
-}
-
-
-/* FOOTER */
 footer {
   padding: 30px;
   display: flex;
@@ -523,73 +498,30 @@ footer {
   font-weight: 800;
   letter-spacing: .18em;
 }
-
 footer img {
   width: 25px;
   height: 30px;
   object-fit: contain;
 }
 
-
-/* МОБІЛЬНА ВЕРСІЯ */
 @media (max-width: 680px) {
-  .topbar {
-    padding: 18px 0;
-  }
-
-  .hero {
-    padding-top: 48px;
-  }
-
-  .date-line {
-    gap: 10px;
-  }
-
-  .date-line span {
-    font-size: 20px;
-  }
-
-  .countdown {
-    gap: 6px;
-  }
-
-  .countdown div {
-    min-width: 58px;
-  }
-
-  .countdown i {
-    font-size: 20px;
-  }
-
-  .facts {
-    grid-template-columns: 1fr;
-  }
-
-  .fact {
-    border-right: 0;
-    border-bottom: 1px solid rgba(0,74,135,.12);
-  }
-
-  .fact:last-child {
-    border-bottom: 0;
-  }
-
-  .two-days {
-    grid-template-columns: 1fr;
-  }
-
+  .topbar { padding: 18px 0; }
+  .hero { padding-top: 48px; }
+  .date-line { gap: 10px; }
+  .date-line span { font-size: 20px; }
+  .countdown { gap: 6px; }
+  .countdown div { min-width: 58px; }
+  .countdown i { font-size: 20px; }
+  .facts { grid-template-columns: 1fr; }
+  .fact { border-right: 0; border-bottom: 1px solid rgba(0,74,135,.12); }
+  .fact:last-child { border-bottom: 0; }
+  .two-days { grid-template-columns: 1fr; }
   .letter {
     left: 2%;
     width: 96%;
-    height: 94%;
-    bottom: 3%;
+    height: auto;
+    bottom: auto;
   }
-
-  .envelope.reveal-letter .letter {
-    transform: translateY(-5%);
-  }
-
-  .wing {
-    display: none;
-  }
+  .envelope.reveal-letter .letter { transform: translateY(25px); }
+  .wing { display: none; }
 }
