@@ -402,26 +402,6 @@ h1 span {
   color: #567080;
 }
 
-.program-note {
-  margin-top: 15px;
-  padding: 18px;
-  border: 1px dashed rgba(252,177,72,.7);
-  text-align: left;
-}
-
-.program-note strong {
-  color: var(--navy);
-  font-size: 10px;
-  letter-spacing: .15em;
-}
-
-.program-note p {
-  margin: 7px 0 0;
-  font-size: 11px;
-  line-height: 1.55;
-  color: #647986;
-}
-
 .map-button {
   display: inline-block;
   margin-top: 18px;
