@@ -916,13 +916,12 @@ footer img {
   font-size: 12px;
 }
 
-/* Розмір пташки */
 img.bird-img {
   display: inline-block !important;
-  width: 14px !important;
-  height: 9px !important;
-  max-width: 14px !important;
-  max-height: 9px !important;
+  width: 22px !important;
+  height: 14px !important;
+  max-width: 22px !important;
+  max-height: 14px !important;
   min-width: 0 !important;
   min-height: 0 !important;
   object-fit: contain !important;
