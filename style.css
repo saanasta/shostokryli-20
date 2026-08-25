@@ -953,9 +953,129 @@ img.bird-img {
 }
 
 @media (max-width: 680px) {
+
+  .topbar {
+    padding: 18px 0;
+  }
+
+  .brand-mark {
+    width: 38px !important;
+    max-width: 38px !important;
+    height: 30px !important;
+    max-height: 30px !important;
+  }
+
+  .hero {
+    padding-top: 48px;
+  }
+
+  .date-line {
+    gap: 10px;
+  }
+
+  .date-line span {
+    font-size: 20px;
+  }
+
+  .countdown {
+    gap: 6px;
+  }
+
+  .countdown div {
+    min-width: 58px;
+  }
+
+  .countdown i {
+    font-size: 20px;
+  }
+
+  .facts {
+    grid-template-columns: 1fr;
+  }
+
+  .fact {
+    border-right: 0;
+    border-bottom: 1px solid rgba(0,74,135,.12);
+  }
+
+  .fact:last-child {
+    border-bottom: 0;
+  }
+
+  .facts .fact:nth-child(3) {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .facts .fact:nth-child(3) b {
+    font-size: 20px;
+  }
+
+  .facts .fact:nth-child(3) small {
+    font-size: 10px;
+  }
+
+  .two-days {
+    grid-template-columns: 1fr;
+  }
+
+  /* Компактний лист на телефоні */
+  .letter {
+    left: 3%;
+    width: 94%;
+  }
+
+  .letter-paper {
+    margin: 6px;
+    padding: 26px 20px;
+  }
+
+  .letter-brand {
+    margin-bottom: 16px;
+  }
+
+  .letter h2 {
+    font-size: 36px;
+    line-height: 0.95;
+  }
+
+  .letter h2 em {
+    font-size: 0.72em;
+  }
+
+  .letter-text {
+    margin: 14px auto;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
   .letter-intro {
     font-size: 12px;
     line-height: 1.65;
+  }
+
+  .facts {
+    margin: 16px 0;
+  }
+
+  .fact {
+    padding: 13px 10px;
+  }
+
+  .two-days {
+    gap: 10px;
+  }
+
+  .day-card {
+    padding: 14px;
+  }
+
+  .day-card h3 {
+    font-size: 19px;
+  }
+
+  .day-card p {
+    font-size: 10px;
   }
 
   .duty-card {
@@ -994,5 +1114,23 @@ img.bird-img {
 
   .signature strong {
     font-size: 17px;
+  }
+
+  img.bird-img {
+    width: 35px !important;
+    max-width: 35px !important;
+    height: auto !important;
+  }
+
+  .envelope.reveal-letter .letter {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    transform: translateY(0);
+  }
+
+  .wing {
+    display: none;
   }
 }
