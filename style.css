@@ -916,20 +916,20 @@ footer img {
   font-size: 12px;
 }
 
-.bird-img {
-  display: inline-block;
-  width: 22px !important;
-  max-width: 22px !important;
-  height: 14px !important;
-  max-height: 14px !important;
-  margin-left: 7px;
-  vertical-align: middle;
-  position: relative;
-  top: -1px;
-  object-fit: contain;
-  object-position: center;
-  transform: rotate(-2deg);
-  filter: drop-shadow(0 1px 1px rgba(80,45,10,.10));
+/* Розмір пташки */
+img.bird-img {
+  display: inline-block !important;
+  width: 14px !important;
+  height: 9px !important;
+  max-width: 14px !important;
+  max-height: 9px !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  object-fit: contain !important;
+  vertical-align: middle !important;
+  margin-left: 6px !important;
+  position: relative !important;
+  top: -1px !important;
 }
 
 .signatures {
