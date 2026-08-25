@@ -917,18 +917,10 @@ footer img {
 }
 
 img.bird-img {
-  display: inline-block !important;
-  width: 22px !important;
-  height: 14px !important;
-  max-width: 22px !important;
-  max-height: 14px !important;
-  min-width: 0 !important;
-  min-height: 0 !important;
+  width: 35px !important;
+  height: auto !important;
+  max-width: 35px !important;
   object-fit: contain !important;
-  vertical-align: middle !important;
-  margin-left: 6px !important;
-  position: relative !important;
-  top: -1px !important;
 }
 
 .signatures {
